@@ -57,15 +57,15 @@ def main():
         stemmer = PorterStemmer()
         stemmed_tokens = [stemmer.stem(word) for word in removed_stopwords]
 
-        terms_set = set()
-        for term in stemmed_tokens:
-            terms_set.update(term)
+        frequency_counter = FreqDist()
+        for word in stemmed_tokens:
+            frequency_counter[word] += 1
 
-        for term in terms_set:
+        for term, freq in frequency_counter.items():
             if term in indexer:
-                indexer[term].append(doc_no)
+                indexer[term].append([doc_id, freq])
             else:
-                indexer[term] = [doc_no]
+                indexer[term] = [[doc_id, freq]]
 
     pickle_out = open('model_queries_22.pth', 'wb')
     pickle.dump(indexer, pickle_out)
