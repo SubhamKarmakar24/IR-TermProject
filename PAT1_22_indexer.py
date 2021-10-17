@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 from nltk import RegexpTokenizer
 from nltk.corpus import stopwords
 from nltk.probability import FreqDist
-from nltk.stem.porter import PorterStemmer
+from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 import os
 import pickle
@@ -29,7 +29,7 @@ def main():
 
     for i in range(len(docs_to_be_indexed)):
         doc_file = docs_to_be_indexed[i]
-        doc_no = i
+        doc_id = i
         with open(doc_file, 'r') as file:
             new_doc_file = file.read().replace('\n', '')
         soup1 = BeautifulSoup(new_doc_file, features="lxml")
@@ -54,12 +54,12 @@ def main():
             word for word in new_tokens if word.lower() not in stop_words
         ]
 
-        stemmer = PorterStemmer()
-        stemmed_tokens = [stemmer.stem(word) for word in removed_stopwords]
+        wnl = WordNetLemmatizer()
+        lemmatized_tokens = [wnl.lemmatize(word) for word in removed_stopwords]
 
         frequency_counter = FreqDist()
-        for word in stemmed_tokens:
-            frequency_counter[word] += 1
+        for word in lemmatized_tokens:
+            frequency_counter[word.lower()] += 1
 
         for term, freq in frequency_counter.items():
             if term in indexer:
