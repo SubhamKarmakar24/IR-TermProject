@@ -12,9 +12,10 @@ def pre_process_text(text):
     tokens = word_tokenize(str(text))
     new_tokens = []
     for token in tokens:
-        modified_token = re.sub('[^a-zA-Z0-9]', '', token)
-        if len(modified_token) > 1:
-            new_tokens.append(modified_token)
+        modified_tokens = re.sub('[^a-zA-Z0-9]', ' ', token).split()
+        for modified_token in modified_tokens:
+            if len(modified_token) > 1:
+                new_tokens.append(modified_token)
 
     stop_words = set(stopwords.words('english'))
     removed_stopwords = [
