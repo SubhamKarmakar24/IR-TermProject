@@ -48,11 +48,11 @@ def main():
             modified_tokens = re.sub('[^a-zA-Z]', ' ', token).split()
             for modified_token in modified_tokens:
                 if len(modified_token) > 1:
-                    new_tokens.append(modified_token)
+                    new_tokens.append(modified_token.lower())
 
         stop_words = set(stopwords.words('english'))
         removed_stopwords = [
-            word for word in new_tokens if word.lower() not in stop_words
+            word for word in new_tokens if word not in stop_words
         ]
 
         wnl = WordNetLemmatizer()
@@ -60,7 +60,7 @@ def main():
 
         frequency_counter = FreqDist()
         for word in lemmatized_tokens:
-            frequency_counter[word.lower()] += 1
+            frequency_counter[word] += 1
 
         for term, freq in frequency_counter.items():
             if term in indexer:
