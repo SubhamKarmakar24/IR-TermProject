@@ -15,18 +15,13 @@ def pre_process_text(text):
         modified_tokens = re.sub('[^a-zA-Z0-9]', ' ', token).split()
         for modified_token in modified_tokens:
             if len(modified_token) > 1:
-                new_tokens.append(modified_token)
+                new_tokens.append(modified_token.lower())
 
     stop_words = set(stopwords.words('english'))
-    removed_stopwords = [
-        word for word in new_tokens if word.lower() not in stop_words
-    ]
+    removed_stopwords = [word for word in new_tokens if word not in stop_words]
 
     wnl = WordNetLemmatizer()
-    lemmatized_tokens = [
-        wnl.lemmatize(word).lower() for word in removed_stopwords
-    ]
-
+    lemmatized_tokens = [wnl.lemmatize(word) for word in removed_stopwords]
     return ' '.join(lemmatized_tokens)
 
 
