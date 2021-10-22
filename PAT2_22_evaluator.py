@@ -3,19 +3,20 @@ import csv
 import numpy as np
 from tabulate import tabulate
 
-K = sys.argv[1]
+path_to_gold_standard = sys.argv[1]
+path_to_ranked_list = sys.argv[2]
 
 parsed = []
 gold = []
 relevance = {}
 
-with open("PAT2_22_ranked_list_A.csv", 'r') as file1:
+with open(path_to_ranked_list, 'r') as file1:
     csvreader = csv.reader(file1)
     header = next(csvreader)
     for row in csvreader:
         parsed.append(row)
 
-with open("./Data/rankedRelevantDocList.csv", 'r') as file2:
+with open(path_to_gold_standard, 'r') as file2:
     csvreader = csv.reader(file2)
     header = next(csvreader)
     for row in csvreader:
@@ -210,8 +211,15 @@ for i in range(len(p10)):
     if ndgc20[i] != nan:
         sndgc20 = sndgc20 + ndgc20[i]
 
-open('./PAT2_22_metrics_A.txt', 'w').close()
-metrics = open('./PAT2_22_metrics_A.txt', 'a')
+if sys.argv[2] == "PAT2_22_ranked_list_A.csv":
+    create = "./PAT2_22_metrics_A.txt"
+elif sys.argv[2] == "PAT2_22_ranked_list_B.csv":
+    create = "./PAT2_22_metrics_B.txt"
+elif sys.argv[2] == "PAT2_22_ranked_list_C.csv":
+    create = "./PAT2_22_metrics_C.txt"
+
+open(create, 'w').close()
+metrics = open(create, 'a')
 metrics.write(tabulate(final, headers=["Query ID", "AP @ 10", "AP @ 20", "NDGC @ 10", "NDGC @ 20"]))
 metrics.write('\n\n')
 metrics.write("Mean Average Precision @ 10 = " + str(sap10/len(p10)) + '\n')
