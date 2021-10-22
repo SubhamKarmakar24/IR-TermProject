@@ -1,0 +1,57 @@
+  Query ID  Query                                        AP @ 10    AP @ 20    NDGC @ 10    NDGC @ 20
+----------  -----------------------------------------  ---------  ---------  -----------  -----------
+       126  swine flu vaccine                          0.50631    0.488922      0.732649     0.739662
+       127  rare cosmic event                          0.458968   0.363238      0.596899     0.596899
+       128  godhra train attack                        0.40246    0.268107      0.877215     0.877215
+       129  michael jackson untimely death             0.673492   0.719716      0.665509     0.684773
+       130  price hike petroleum product               0.149127   0.141441      0.455605     0.455605
+       131  abduction murder journalist                0.356746   0.482025      0.546008     0.609402
+       132  barack obama victory                       0.0478968  0.057387      0.333333     0.333333
+       133  torture abu ghraib prison                  0.387024   0.429584      0.679731     0.69879
+       134  ban slapped simi                           0.01       0.0384386     0.289065     0.289065
+       135  india agriculture friendly central budget  0          0             0            0
+       136  piracy world entertainment                 0.195238   0.30767       0.435817     0.52041
+       137  death ltte head                            0.37746    0.263517      0.850345     0.506685
+       138  india woman reservation bill               0          0.0139755     0            0.244651
+       139  vanquishing somali pirate                  0.436032   0.445386      0.536376     0.543167
+       140  search life water space                    0.192897   0.147196      0.63093      0.380324
+       141  birth cloned human baby                    0          0.0208803     0            0.255958
+       142  illegal felling tree                       0.634921   0.501159      0.926758     0.858177
+       143  tata car nano                              0.519921   0.520174      0.660065     0.681217
+       144  bhopal gas tragedy                         0.321071   0.327729      0.628127     0.633916
+       145  assassination benazir bhutto               0.0478968  0.120201      0.333333     0.361541
+       146  ram janmabhoomi verdict                    0          0             0            0
+       147  cyber crime india                          0          0.0453686     0            0.348467
+       148  popularity social networking site          0.657976   0.627639      0.836996     0.830177
+       149  commonwealth game delhi                    0.0478968  0.147075      0.333333     0.481574
+       150  bill gate philanthropic endeavour          0.240794   0.189774      0.591235     0.559349
+       151  indian win nobel prize chemistry           0.273571   0.242233      0.499764     0.502535
+       152  successful missile test india              0.336508   0.337244      0.752972     0.717321
+       153  structure solar system                     0.0690079  0.142451      0.388958     0.465448
+       154  raja 2g spectrum scam                      0          0             0            0
+       155  attack taj mumbai                          0.112619   0.218957      0.459964     0.472765
+       156  shashi tharoor ipl controversy             0.292897   0.179887      1            1
+       157  successful indian film                     0.292897   0.187796      1            0.757488
+       158  america attack afghanistan                 0.0645635  0.0946134     0.356207     0.384103
+       159  sheikh hasina 2008 election                0.370635   0.326981      0.560478     0.563471
+       160  iraq war 2003                              0          0             0            0
+       161  george bush anti terrorism operation       0.130675   0.18476       0.448644     0.393948
+       162  catastrophic tornado                       0.802381   0.661652      0.86516      0.827208
+       163  tiger conservation india                   0.53369    0.41395       0.959654     0.888027
+       164  michael jackson child abuse                0.554206   0.513673      0.747651     0.743084
+       165  marriage divorce law                       0.142897   0.104887      0.5          0.5
+       166  kanishka air disaster                      0          0.0108505     0            0.239812
+       167  chechen rebel government                   0.99       0.854458      0.889628     0.86942
+       168  suu kyi house arrest                       0.707817   0.612558      0.93308      0.686714
+       169  naxalite attack                            0          0             0            0
+       170  development indian hockey                  0.142897   0.104887      0.5          0.5
+       171  prime witness best bakery case             0          0             0            0
+       172  female foeticide india                     0.119286   0.159959      0.456468     0.456468
+       173  2008 olympics                              0          0             0            0
+       174  international economic slump               0          0.0108505     0            0.239812
+       175  sachin tendulkar record run test cricket   0.378571   0.313986      0.573636     0.537989
+
+Mean Average Precision @ 10 = 0.2595849206349206
+Mean Average Precision @ 20 = 0.2468647364417488
+Average Normalized Discounted Cumulative Gain @ 10 = 0.47663191002921984
+Average Normalized Discounted Cumulative Gain @ 20 = 0.4847194709329344

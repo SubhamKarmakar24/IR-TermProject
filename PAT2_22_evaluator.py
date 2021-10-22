@@ -5,10 +5,12 @@ from tabulate import tabulate
 
 path_to_gold_standard = sys.argv[1]
 path_to_ranked_list = sys.argv[2]
+path_to_queries = "./queries_22.txt"
 
 parsed = []
 gold = []
 relevance = {}
+queries = []
 
 with open(path_to_ranked_list, 'r') as file1:
     csvreader = csv.reader(file1)
@@ -21,6 +23,12 @@ with open(path_to_gold_standard, 'r') as file2:
     header = next(csvreader)
     for row in csvreader:
         gold.append(row)
+
+with open(path_to_queries, 'r') as file3:
+    csvreader = csv.reader(file3)
+    for row in csvreader:
+        queries.append(row[0].split(" ", 1)[1])
+
 
 
 output_parsed = {}
@@ -190,6 +198,7 @@ final = []
 temp = []
 for i in range(len(p10)):
     temp.append(i+126)
+    temp.append(queries[i])
     temp.append(p10[i])
     temp.append(p20[i])
     temp.append(ndgc10[i])
@@ -212,19 +221,18 @@ for i in range(len(p10)):
         sndgc20 = sndgc20 + ndgc20[i]
 
 if sys.argv[2] == "PAT2_22_ranked_list_A.csv":
-    create = "./PAT2_22_metrics_A.txt"
+    create = "./PAT2_22_metrics_A.csv"
 elif sys.argv[2] == "PAT2_22_ranked_list_B.csv":
-    create = "./PAT2_22_metrics_B.txt"
+    create = "./PAT2_22_metrics_B.csv"
 elif sys.argv[2] == "PAT2_22_ranked_list_C.csv":
-    create = "./PAT2_22_metrics_C.txt"
+    create = "./PAT2_22_metrics_C.csv"
 
 open(create, 'w').close()
 metrics = open(create, 'a')
-metrics.write(tabulate(final, headers=["Query ID", "AP @ 10", "AP @ 20", "NDGC @ 10", "NDGC @ 20"]))
-metrics.write('\n\n')
-metrics.write("Mean Average Precision @ 10 = " + str(sap10/len(p10)) + '\n')
-metrics.write("Mean Average Precision @ 20 = " + str(sap20/len(p20)) + '\n')
-metrics.write("Average Normalized Discounted Cumulative Gain @ 10 = " + str(sndgc10/len(ndgc10)) + '\n')
-metrics.write("Average Normalized Discounted Cumulative Gain @ 20 = " + str(sndgc20/len(ndgc20)) + '\n')
+# metrics.write(tabulate(final, headers=["Query ID", "Query", "AP @ 10", "AP @ 20", "NDGC @ 10", "NDGC @ 20"]))
+metrics.write('Query_ID,Query,AP@10,AP@20,NDCG@10,NDCG@20\n')
+for i in range(len(p10)):
+    metrics.write(str(final[i][0]) + ',' + str(final[i][1]) + ',' + str(final[i][2]) + ',' + str(final[i][3]) + ',' + str(final[i][4]) + ',' + str(final[i][5]) + '\n')
+metrics.write(",," + str(sap10/len(p10)) + ',' + str(sap20/len(p20)) + ',' + str(sndgc10/len(ndgc10)) + ',' + str(sndgc20/len(ndgc20)) + '\n')
 metrics.close()
 
