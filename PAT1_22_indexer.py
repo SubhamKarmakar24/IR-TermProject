@@ -37,7 +37,7 @@ def main():
         text_temp = [u.string for u in soup1.find_all('text')]
 
         if len(text_temp) == 0:
-            print(file0)
+            print(file)
             continue
 
         text_in_file = str(text_temp[0])
