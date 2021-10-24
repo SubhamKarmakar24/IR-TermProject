@@ -240,7 +240,6 @@ elif sys.argv[2] == "PAT2_22_ranked_list_C.csv":
 
 open(create, 'w').close()
 metrics = open(create, 'a')
-# metrics.write(tabulate(final, headers=["Query ID", "Query", "AP @ 10", "AP @ 20", "NDGC @ 10", "NDGC @ 20"]))
 metrics.write('Query_ID,Query,AP@10,AP@20,NDCG@10,NDCG@20\n')
 for i in range(len(p10)):
     metrics.write(str(final[i][0]) + ',' + str(final[i][1]) + ',' + str(final[i][2]) + ',' + str(final[i][3]) + ',' + str(final[i][4]) + ',' + str(final[i][5]) + '\n')
