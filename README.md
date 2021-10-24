@@ -11,6 +11,9 @@ Logic and Algorithm:
 1. Considered the tokens from the queries as they are joined by 'AND' logic.
 2. Used the trivial merge algorithm(for 'AND' logic) for the boolean retrieval dicussed in the class, for merging the postings lists for the specific tokens obtained from the queries above. 
 
+Assumption:
+indexed_docs.txt file must be present in the root directory of the project.
+
 Task 2B:
 Logic:
 1. Parsed the data of generated Ranked list A, B, C; Gold standard ranked lists and Queries in an array
