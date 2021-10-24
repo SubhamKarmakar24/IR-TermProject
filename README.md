@@ -56,9 +56,12 @@ Python version used: 3.6.8
 
 Library Requirements:
 
-1. os                                                  4. numpy
-2. sys                                                 5. math
-3. pickle                                              6. csv
+1. os                                                  
+2. sys                                                 
+3. pickle    
+4. numpy
+5. math
+6. csv
 7. collections
 
 
