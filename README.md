@@ -19,7 +19,7 @@ Logic:
 1. Parsed the data of generated Ranked list A, B, C; Gold standard ranked lists and Queries in an array
 2. Maintained a document that maps the query id with the relevant documents and relevance score
 3. We then compared which documents in our ranked list is present in the Gold Standard list and calculated the Precision@K and Average Precision.
-4. The relevance of the documents is then stored in an array and compared to the sorted array of the relevance scores. This way, we calculate the NDGC.
+4. The relevance of the documents is then stored in an array and compared to the sorted array of the relevance scores. This way, we calculate the NDCG.
 5. We then average over all the queries to find out the average parameters.
 
 Assumptions:
