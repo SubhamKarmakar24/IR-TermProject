@@ -212,13 +212,24 @@ sap20 = 0
 sndgc10 = 0
 sndgc20 = 0
 
+cap10 = 0
+cap20 = 0
+cndgc10 = 0
+cndgc20 = 0
+
 for i in range(len(p10)):
-    sap10 = sap10 + p10[i]
-    sap20 = sap20 + p20[i]
+    if p10[i] > 0.01:
+        sap10 = sap10 + p10[i]
+        cap10 = cap10 + 1
+    if p20[i] > 0.01:
+        sap20 = sap20 + p20[i]
+        cap20 = cap20 + 1
     if ndgc10[i] != nan:
         sndgc10 = sndgc10 + ndgc10[i]
+        cndgc10 = cndgc10 + 1
     if ndgc20[i] != nan:
         sndgc20 = sndgc20 + ndgc20[i]
+        cndgc20 = cndgc20 + 1
 
 if sys.argv[2] == "PAT2_22_ranked_list_A.csv":
     create = "./PAT2_22_metrics_A.csv"
@@ -233,6 +244,6 @@ metrics = open(create, 'a')
 metrics.write('Query_ID,Query,AP@10,AP@20,NDCG@10,NDCG@20\n')
 for i in range(len(p10)):
     metrics.write(str(final[i][0]) + ',' + str(final[i][1]) + ',' + str(final[i][2]) + ',' + str(final[i][3]) + ',' + str(final[i][4]) + ',' + str(final[i][5]) + '\n')
-metrics.write(",," + str(sap10/len(p10)) + ',' + str(sap20/len(p20)) + ',' + str(sndgc10/len(ndgc10)) + ',' + str(sndgc20/len(ndgc20)) + '\n')
+metrics.write(",," + str(sap10/cap10) + ',' + str(sap20/cap20) + ',' + str(sndgc10/cndgc10) + ',' + str(sndgc20/cndgc20) + '\n')
 metrics.close()
 
