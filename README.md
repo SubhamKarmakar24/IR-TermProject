@@ -19,14 +19,14 @@ Assumptions:
 2. queries_22.txt must be present in the root directory of the project.
 3. PAT2_22_ranked_list<K>.csv must be present in the root directory of the project.
 
-To run Task 2B:
-$>> python PAT2_22_evaluator.py ./Data/rankedRelevantDocList.csv PAT2_22_ranked_list_A.csv
-$>> python PAT2_22_evaluator.py ./Data/rankedRelevantDocList.csv PAT2_22_ranked_list_B.csv
+To run Task 2B:<br/>
+$>> python PAT2_22_evaluator.py ./Data/rankedRelevantDocList.csv PAT2_22_ranked_list_A.csv<br/>
+$>> python PAT2_22_evaluator.py ./Data/rankedRelevantDocList.csv PAT2_22_ranked_list_B.csv<br/>
 $>> python PAT2_22_evaluator.py ./Data/rankedRelevantDocList.csv PAT2_22_ranked_list_C.csv
 
-The output will be generated in the root directory
-PAT2_22_metrics_A.csv
-PAT2_22_metrics_B.csv
+The output will be generated in the root directory<br/>
+PAT2_22_metrics_A.csv<br/>
+PAT2_22_metrics_B.csv<br/>
 PAT2_22_metrics_C.csv
 
 Python version used: 3.9.7
