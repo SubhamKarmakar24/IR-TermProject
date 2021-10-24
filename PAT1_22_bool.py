@@ -4,12 +4,14 @@ idx = {}
 pic_file = sys.argv[1]
 pickle_file = open(pic_file, "rb")
 objec = pickle.load(pickle_file)
+text_file = open('./indexed_docs.txt','r')
+text = text_file.read()
+list_y = text.split('\n')
+map1 = {}
+for i in range(len(list_y)):
+    map1[i] = list_y[i].split('/')[-1]
 for j in objec:
     idx[j] = [x[0] for x in objec[j]]
-map1 = {}
-for g in objec:
-    for c in objec[g]:
-        map1[c[0]] = c[2]
 
 q_file = sys.argv[2]
 query_file = open(q_file, 'r')
