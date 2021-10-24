@@ -6,6 +6,16 @@ Group Members:
 3. Subham Karmakar - 18EE10067
 4. Sankalp Srivastava - 18EE10069
 
+Task 1A:
+Generates pickle file and indexed documents file. The pickle file stores
+doc-ids instead of actual doc-path. The doc-ids are the indices of that
+particular document in the file - indexed_docs.txt. The pickle file contains a
+dictinary with terms as keys and a list of doc-id and term-frequency as its
+values, i.e. [doc-id, term frequency].
+
+Task 1B:
+Generates queries file.
+
 Task 1C:
 Logic and Algorithm:
 1. Considered the tokens from the queries as they are joined by 'AND' logic.
@@ -45,7 +55,8 @@ Library Requirements:
 3. numpy
 4. tabulate
 5. pickle
-
-
-
-
+5. pickle
+6. bs4
+7. re
+8. os
+9. pickle
