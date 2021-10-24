@@ -3,7 +3,14 @@ import sys
 idx = {}
 pic_file = sys.argv[1]
 pickle_file = open(pic_file, "rb")
-idx = pickle.load(pickle_file)
+objec = pickle.load(pickle_file)
+for j in objec:
+    idx[j] = [x[0] for x in objec[j]]
+map1 = {}
+for g in objec:
+    for c in objec[g]:
+        map1[c[0]] = c[2]
+
 q_file = sys.argv[2]
 query_file = open(q_file, 'r')
 x = query_file.read()
@@ -38,9 +45,9 @@ for u in query[:-1]:
         for i in range(1,len(st)):
                 merged = merge(merged,doc[st[i]],len(merged),len(doc[st[i]]))
         
-    bits.append([u[0],[x[1].split('/')[-1] for x in merged]])  
+    bits.append([u[0],[map1[x] for x in merged]])  
     
-file1 = open('PAT1_22_results.txt','a')
+file1 = open('PAT1_22_results.txt','w')
 for c in bits:
     if len(c[1])!=0:
         file1.write("{} : {}\n".format(c[0],', '.join(c[1])))
