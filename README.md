@@ -49,6 +49,7 @@ Extra input / parameters:
 The path to the “queries_<GROUP_NO>.txt is to be given along with the path to the inverted index file and the “en_BDNews24” folder. Here, GROUP_NO is 22.
 
 To run Task 2A:
+  
 $>>python3 PAT2_22_ranker.py  <path to the en_BDNews24 folder> <path_to_model_queries_22.pth>  <path to queries_22.txt>
 
 Python version used: 3.6.8
