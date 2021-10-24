@@ -1,3 +1,5 @@
+#------Code for Task 2A of 'DEFAULT' project-------
+
 #------Importing the required libraries---------
 
 import os
