@@ -6,6 +6,11 @@ Group Members:
 3. Subham Karmakar - 18EE10067
 4. Sankalp Srivastava - 18EE10069
 
+Task 1C:
+Logic and Algorithm:
+1. Considered the tokens from the queries as they are joined by 'AND' logic.
+2. Used the trivial merge algorithm(for 'AND' logic) for the boolean retrieval dicussed in the class, for merging the postings lists for the specific tokens obtained from the queries above. 
+
 Task 2B:
 Logic:
 1. Parsed the data of generated Ranked list A, B, C; Gold standard ranked lists and Queries in an array
@@ -36,6 +41,7 @@ Library Requirements:
 2. csv
 3. numpy
 4. tabulate
+5. pickle
 
 
 
