@@ -1,13 +1,12 @@
-#------Code for Task 2A of 'DEFAULT' project-------
+#------Code for Task 2A of 'DEFAULT' project----
+#------Written by Arghyadeep Bandyopadhyay (Roll No: 18EE10012)----
 
 #------Importing the required libraries---------
 
 import os
 import sys
 import pickle
-import nltk
 import numpy as np
-import string
 import csv
 import math
 from collections import Counter
