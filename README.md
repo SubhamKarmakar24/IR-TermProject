@@ -6,7 +6,7 @@ Group Members:
 3. Subham Karmakar - 18EE10067
 4. Sankalp Srivastava - 18EE10069
 
-Data: https://drive.google.com/drive/folders/1Q10GMDfSr1t6wKFvLHda6DLJA4GOnUt6?usp=sharing
+Data: https://drive.google.com/drive/folders/1ELskVvmr4snskq8vUfPh0gtlDBBgPhQ9?usp=sharing
 
 Task 1A:
 Generates pickle file and indexed documents file. The pickle file stores
